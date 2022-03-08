@@ -41,7 +41,8 @@ public class ConsoleIO {
             return s;
         } catch (NoSuchElementException e) {
             //System.out.println("Такая комбинация завершает программу");
-            System.exit(0);
+            //System.exit(0);
+
         }
         return "";
     }
@@ -50,10 +51,14 @@ public class ConsoleIO {
         System.out.print("> ");
         try {
             String s = a.nextLine();
+            if (s != null)
             return s;
+            else
+                return "";
         } catch (NoSuchElementException e) {
             //System.out.println("Такая комбинация завершает программу");
-            System.exit(0);
+            //System.exit(0);
+
         }
         return "";
     }

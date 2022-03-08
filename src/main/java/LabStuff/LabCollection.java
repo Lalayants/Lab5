@@ -4,6 +4,7 @@ package LabStuff;
 import Utilities.ConsoleIO;
 import Utilities.LabComparator;
 
+import java.time.LocalDate;
 import java.util.*;
 
 /**
@@ -12,9 +13,15 @@ import java.util.*;
 public class LabCollection {
     public static Vector<LabWork> collection = new Vector<>();
     public static ArrayList<Integer> ids = new ArrayList<>();
+    private static LocalDate creationDate = LocalDate.now();
 
-    public static void LabCollection() {
+    public LabCollection() {
         ids.add(0);
+        creationDate=LocalDate.now();
+    }
+
+    public static LocalDate getCreationDate() {
+        return creationDate;
     }
 
     public static Vector<LabWork> getCollection() {
@@ -69,7 +76,7 @@ public class LabCollection {
     }
 
     public String getInfo() {
-        return "Тип коллекции: Vector\nРазмер коллекции: " + this.getSize(); //creationDate;
+        return "Тип коллекции: Vector\nРазмер коллекции: " + this.getSize()+ "\n" +"Дата инициализации: " +  creationDate;
     }
 
     public static void show(Vector<LabWork> v){

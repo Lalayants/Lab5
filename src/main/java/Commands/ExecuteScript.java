@@ -9,6 +9,7 @@ import Utilities.LabWorkCreator;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.Vector;
 
@@ -20,6 +21,7 @@ import java.util.Vector;
 public class ExecuteScript implements Commandable {
     @Override
     public void execute(Object o) {
+        String START = (String) o;
         Invoker inv = new Invoker();
         inv.register(new Add(), new Help(), new Info(), new Show(), new Clear(), new Exit(), new Save(), new UpdateId(),
                 new RemoveById(), new RemoveFirst(), new AddIfMin(), new RemoveLower(), new CountLessThanMinimalPoint(),
@@ -80,6 +82,23 @@ public class ExecuteScript implements Commandable {
                             }
                         else {
                             System.out.println("В скрипте команде add не хватает аргументов");
+                            break;
+                        }
+                    case"execute_script":
+                        try {
+                            Object argument = ComAndArg[1];
+                            Commandable command = Invoker.commands.get(ComAndArg[0]);
+
+                                if(!Objects.equals(argument, START)) {
+                                    command.execute(argument);
+                                    break;
+                                }else{
+                                    System.out.println("В скрипте рекурсия, команда пропущена");
+                                    break;
+                                }
+
+                        }catch (IndexOutOfBoundsException e){
+                            System.out.println("Ошибка, должно быть имя файла");
                             break;
                         }
                     case "add_if_min":

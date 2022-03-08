@@ -29,6 +29,7 @@ public class Invoker {
         Object argument = null;
         String[] NameAndArgs = commandName.split(" ");
         Commandable command = commands.get(NameAndArgs[0]);
+        if (!NameAndArgs[0].equals("KLPO"))
         try {
             if (command == null)
                 throw new IllegalStateException();
@@ -38,7 +39,8 @@ public class Invoker {
 
             command.execute(argument);
         } catch (IllegalStateException e) {
-            System.out.println("Такой команды не существует, введите \"help\", чтобы ознакомиться со всем перечнем команд.");
+            if (!NameAndArgs[0].equals(""))
+                System.out.println("Такой команды не существует, введите \"help\", чтобы ознакомиться со всем перечнем команд.");
         }
 
     }

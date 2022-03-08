@@ -10,3 +10,4 @@ black
 09 01 2003
 hard
 show
+execute_script src/main/java/script.txt

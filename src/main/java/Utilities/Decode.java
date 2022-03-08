@@ -15,6 +15,7 @@ import java.util.Vector;
  */
 public class Decode {
     public static void fill(String data) {
+        LabCollection LabCollection =new LabCollection();
         Vector<LabWork> collection = new Vector<>();
         Gson gson = new Gson();
         if (data != null) {

@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException, FileNotFoundException {
-
+        LabCollection labCollection = new LabCollection();
         Decode.fill(FileReader.readFromFile());
         Invoker inv = new Invoker();
         inv.register(new Add(), new Help(), new Info(), new Show(), new Clear(), new Exit(), new Save(), new UpdateId(),
@@ -33,11 +33,20 @@ public class Main {
 //
 //            }
 
-//
+        String a = "";
         System.out.println("Приложение готово к работе, введите команду, для справки введите help.");
         while (true) {
             System.out.print(">");
-            inv.execute(ConsoleIO.ConsoleIn());
+            a = ConsoleIO.ConsoleIn().trim();
+            if (!a.equals("null") && !a.equals(""))
+                inv.execute(a);
+            else
+                System.in.reset();
+
+
+
+
+
         }
 
 
