@@ -41,10 +41,11 @@ public class ConsoleIO {
             return s;
         } catch (NoSuchElementException e) {
             //System.out.println("Такая комбинация завершает программу");
-            //System.exit(0);
+            System.exit(0);
+            return null;
 
         }
-        return "";
+        //return "";
     }
 
     public static String ConsoleIn(Scanner a) {

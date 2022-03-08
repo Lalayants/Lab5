@@ -37,11 +37,14 @@ public class Main {
         System.out.println("Приложение готово к работе, введите команду, для справки введите help.");
         while (true) {
             System.out.print(">");
-            a = ConsoleIO.ConsoleIn().trim();
-            if (!a.equals("null") && !a.equals(""))
-                inv.execute(a);
-            else
-                System.in.reset();
+            try {
+                a = ConsoleIO.ConsoleIn().trim();
+                if (!a.equals("null") && !a.equals(""))
+                    inv.execute(a);
+            }catch (NullPointerException e){
+
+            }
+
 
 
 
