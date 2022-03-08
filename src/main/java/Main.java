@@ -1,15 +1,10 @@
 import java.io.*;
 
-import Commands.*;
-import LabStuff.LabCollection;
-import Utilities.ConsoleIO;
-import Utilities.Decode;
-import Utilities.FileReader;
-import Utilities.FileWriter;
-
-
-import java.util.NoSuchElementException;
-import java.util.Scanner;
+import commands.*;
+import labStuff.LabCollection;
+import utilities.ConsoleIO;
+import utilities.Decode;
+import utilities.FileReader;
 
 public class Main {
     public static void main(String[] args) throws IOException, FileNotFoundException {
