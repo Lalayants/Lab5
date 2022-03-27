@@ -34,7 +34,7 @@ public class ConsoleIO {
             String s = in.nextLine();
             return s;
         } catch (NoSuchElementException e) {
-            //System.out.println("Такая комбинация завершает программу");
+            System.out.println("Такая комбинация завершает программу");
             System.exit(0);
             return null;
 
